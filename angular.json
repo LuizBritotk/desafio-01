@@ -45,7 +45,13 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/ambientes/ambiente.ts",
+                  "with": "src/ambientes/ambiente.prod.ts"
+                }
+              ]
             },
             "development": {
               "optimization": false,
