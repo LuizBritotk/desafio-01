@@ -14,7 +14,7 @@ import { ModalComponent } from '../componentes/modal.componente';
 export class JogoDaVelhaComponent {
   jogador1 = '';
   jogador2 = '';
-  tamanho = 16; // Deixei o tamanho fixo, mas poderia deixar dinamico, recebendo do input.
+  tamanho = 0; // Deixei o tamanho fixo, mas poderia deixar dinamico, recebendo do input.
 
   jogoIniciado = false;
   tabuleiro: string[] = [];
@@ -30,6 +30,8 @@ export class JogoDaVelhaComponent {
    */
 
   iniciarJogo() {
+
+    debugger;
     this.lado = Math.sqrt(this.tamanho);
     this.tabuleiro = Array(this.tamanho).fill('');
     this.jogoIniciado = true;
@@ -75,6 +77,8 @@ export class JogoDaVelhaComponent {
    */
   verificarVencedor(): boolean {
     const linhas = [];
+
+    debugger;
 
     for (let i = 0; i < this.tamanho; i += this.lado) {
       linhas.push(this.tabuleiro.slice(i, i + this.lado));
