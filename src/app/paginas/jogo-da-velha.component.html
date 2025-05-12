@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Desafio 01 - Jogo da Velha (Angular)</h2>
+
+
+
+  <!-- Modal de início -->
+  <div *ngIf="!jogoIniciado" class="inicio-form">
+    <label>Jogador 1:
+      <input [(ngModel)]="jogador1" />
+    </label><br />
+
+    <label>Jogador 2:
+      <input [(ngModel)]="jogador2" />
+    </label><br />
+
+    <!-- <label>Qtd. Col?
+      <input type="number" [(ngModel)]="tamanho" />
+    </label><br /> -->
+
+    <button (click)="iniciarJogo()">Iniciar Jogo</button>
+  </div>
+
+  <!-- Tabuleiro -->
+  <div *ngIf="jogoIniciado" class="jogo">
+    <p *ngIf="!vencedor">Vez de: {{ jogadorAtual === 'O' ? jogador1 : jogador2 }} ({{ jogadorAtual }})</p>
+    <p *ngIf="vencedor && vencedor !== 'Empate'">Vitória de {{ vencedor }}!</p>
+    <p *ngIf="vencedor === 'Empate'">O jogo terminou em empate!</p>
+
+    <div class="board" [style.gridTemplateColumns]="'repeat(' + lado + ', 60px)'">
+      <button
+        *ngFor="let cell of tabuleiro; let i = index"
+        (click)="jogar(i)"
+        [disabled]="cell !== '' || vencedor"
+        class="cell">
+        {{ cell }}
+      </button>
+    </div>
+
+    <button class="reiniciar" (click)="reiniciar()">Reiniciar Jogo</button>
+  </div>
+</div>

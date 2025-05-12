@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tema Claro */
+body.tema-claro {
+  --cor-fundo: #f6f8fa;
+  --cor-texto: #24292f;
+  --cor-borda: #d0d7de;
+  --cor-botao: #2ea44f;
+  --cor-botao-hover: #218739;
+  --cor-botao-secundario: #1eb39c;
+
+  --color-bg-discussions-row-emoji-box: rgba(209, 213, 218, 0.5);
+  --color-project-header-bg: #24292f;
+  --color-project-sidebar-bg: #ffffff;
+  --color-project-gradient-in: #ffffff;
+  --color-project-gradient-out: rgba(255, 255, 255, 0);
+
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* Tema Escuro */
+body.tema-escuro {
+  --cor-fundo: #0d1117;
+  --cor-texto: #c9d1d9;
+  --cor-borda: #30363d;
+  --cor-botao: #238636;
+  --cor-botao-hover: #2ea043;
+  --cor-botao-secundario: #cbdfdc;
+
+  --color-bg-discussions-row-emoji-box: #57606a;
+  --color-project-header-bg: #0d1117;
+  --color-project-sidebar-bg: #161b22;
+  --color-project-gradient-in: #161b22;
+  --color-project-gradient-out: rgba(22, 27, 34, 0);
+
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
